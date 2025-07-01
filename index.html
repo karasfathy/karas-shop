@@ -1,136 +1,205 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
-<meta name="description" content="موقع لتحميل الفيديوهات من يوتيوب وتيك توك بدون علامة مائية.">
-<meta name="keywords" content="تحميل فيديو, يوتيوب, تيك توك, فيسبوك, إنستغرام, بدون لوجو">
-<meta name="robots" content="index, follow">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>تحميل الفيديوهات من كل المنصات</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>كاراس فتحي | متجر الشباشب</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
-
-    :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-}
-[data-theme="dark"] {
-  --bg-color: #0f172a;
-  --text-color: #ffffff;
-}
-
     body {
-      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1, #fbc2eb, #a6c1ee, #84fab0, #8fd3f4, #a1c4fd, #c2e9fb, #d4fc79, #96e6a1);
-      background-size: 5000% 5000%;
-      animation: rainbow 40s ease infinite;
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      background-color: #f2f2f2;
+      color: #222;
     }
-
-    @keyframes rainbow {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
+    header {
+      background-color: #131921;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6));
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-align: center;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #131921;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .product {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .product button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #131921;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input[type=email], input[type=password], input[type=text] {
+      padding: 12px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-btn {
+      background-color: #ff9900;
+      color: white;
+      padding: 12px;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
     }
   </style>
-<script>
-  function toggleTheme() {
-    const body = document.body;
-    const theme = body.getAttribute("data-theme") === "light" ? "dark" : "light";
-    body.setAttribute("data-theme", theme);
-  }
-</script>
-
-  
 </head>
-<body data-theme="light" class="min-h-screen flex flex-col items-center justify-center text-white text-center p-4">
-<div class="absolute top-4 right-4">
-  <button onclick="toggleTheme()" class="bg-black text-white px-4 py-2 rounded-full shadow">
-    🌗 وضع ليلي/نهاري
-  </button>
-</div>
+<body>
+  <header>
+    <h1>كاراس فتحي</h1>
+    <nav>
+      <a href="#products">المنتجات</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+      <a href="#login">تسجيل الدخول</a>
+    </nav>
+  </header>
 
+  <div class="hero">
+    مرحبًا بك في متجر الشباشب الفاخرة
+  </div>
 
-  <h1 class="text-4xl font-bold mb-6 drop-shadow-lg">📥 تحميل أي فيديو من أي منصة</h1>
-  <p class="mb-6 text-lg max-w-xl">ضع رابط الفيديو من يوتيوب، تيك توك، فيسبوك، إنستغرام أو تيليجرام وسنوجهك لأفضل طريقة تحميل بدون لوجو.</p>
+  <section class="section" id="products">
+    <h2>منتجاتنا</h2>
+    <div class="products">
+      <div class="product">
+        <p><img src="1.jpg" : شبشب جلد فاخر </p>
+        <h3>شبشب جلد فاخر</h3>
+        <p>السعر: 150 جنيه</p>
+        <button onclick="addToCart('شبشب جلد فاخر')">أضف إلى السلة</button>
+      </div>
+      <div class="product">
+        <p><img src="2.jpg" شبشب مطاطي مريح</p>
+        <h3>شبشب مطاطي مريح</h3>
+        <p>السعر: 90 جنيه</p>
+        <button onclick="addToCart('شبشب مطاطي مريح')">أضف إلى السلة</button>
+      </div>
+      <div class="product">
+        <p><img src="3.jpg" شبشب صيفي خفيف</p>
+        <h3>شبشب صيفي خفيف</h3>
+        <p>السعر: 120 جنيه</p>
+        <button onclick="addToCart('شبشب صيفي خفيف')">أضف إلى السلة</button>
+      </div>
+      <div class="product">
+        <p><img src="4.jpg" >: شبشب منزلي مبطن</p>
+        <h3>شبشب منزلي مبطن</h3>
+        <p>السعر: 110 جنيه</p>
+        <button onclick="addToCart('شبشب منزلي مبطن')">أضف إلى السلة</button>
+      </div>
+    </div>
+  </section>
 
-  <input type="text" id="url" placeholder="أدخل رابط الفيديو هنا..."
-    class="w-full max-w-xl px-4 py-3 rounded-xl text-black text-lg shadow-lg outline-none mb-4">
+  <section class="section" id="about">
+    <h2>من نحن</h2>
+    <p> نحن متجر متخصص في بيع الشباشب الفاخرة بجودة عالية وخامات ممتازة وتصميمات عصرية تناسب جميع الأذواق و التواصل عن طريق رقم لهاتف متاح توصيل لاى مكان  فى طنطا للتواصل معنا اتصل على 01222373426 او 01555863369
 
-  <button onclick="redirect()"
-    class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-6 py-3 rounded-full shadow-xl transition duration-300">
-    🚀 ابدأ التحميل
-  </button>
-<div class="mt-10 w-full max-w-3xl text-white text-center">
-  <h2 class="text-2xl font-bold mb-4">🎵 مكتبة نغمات مجانية</h2>
-  <ul class="space-y-2">
-    <li><a href="sounds/ringtone1.mp3" download class="underline hover:text-yellow-300">🔊 نغمة 1</a></li>
-    <li><a href="sounds/ringtone2.mp3" download class="underline hover:text-yellow-300">🔊 نغمة 2</a></li>
-    <li><a href="sounds/ringtone3.mp3" download class="underline hover:text-yellow-300">🔊 نغمة 3</a></li>
-  </ul>
-</div>
-<div class="mt-10 w-full max-w-3xl text-white text-center">
-  <h2 class="text-2xl font-bold mb-4">📚 مقالات مفيدة</h2>
-  <ul class="space-y-2">
-    <li><a href="#" class="underline hover:text-yellow-300">💡 كيف تحمل من تيك توك بدون علامة مائية؟</a></li>
-    <li><a href="#" class="underline hover:text-yellow-300">🎬 أفضل تطبيقات مونتاج فيديو للموبايل</a></li>
-    <li><a href="#" class="underline hover:text-yellow-300">🧠 كيف تبدأ قناة يوتيوب ناجحة؟</a></li>
-  </ul>
-</div>
+  <section class="section" id="contact">
+    <h2>تواصل معنا</h2>
+    <p>📞 رقم الهاتف: 01222373426</p>
+    <p>📧 البريد الإلكتروني: farhykaras554422@gmail.com</p>
+    <p><a href="https://wa.me/201222373426" target="_blank">راسلنا على واتساب</a></p>
+  </section>
 
-  
+  <section class="section" id="login">
+    <h2>تسجيل الدخول</h2>
+    <form onsubmit="login(event)">
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+      <input type="password" id="password" placeholder="كلمة المرور" required>
+      <button class="login-btn" type="submit">تسجيل الدخول</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 جميع الحقوق محفوظة لمتجر كاراس فتحي.
+  </footer>
+
   <script>
-    function redirect() {
-      const url = document.getElementById("url").value.trim();
-      if (!url) return alert("من فضلك أدخل رابط الفيديو.");
-
-      if (url.includes("youtube.com") || url.includes("youtu.be")) {
-        const id = extractYouTubeID(url);
-        window.open("https://ssyoutube.com/watch?v=" + id, "_blank");
-      } else if (url.includes("tiktok.com")) {
-        window.open("https://snaptik.app/", "_blank");
-      } else if (url.includes("instagram.com")) {
-        window.open("https://igram.io", "_blank");
-      } else if (url.includes("facebook.com")) {
-        window.open("https://fdown.net", "_blank");
-      } else if (url.includes("t.me")) {
-        alert("افتح الرابط مباشرة في تيليجرام واضغط على الفيديو لتنزيله.");
-      } else {
-        alert("عذرًا، المنصة غير مدعومة حاليًا. جرب رابط آخر.");
-      }
+    function addToCart(product) {
+      alert(product + ' تمت إضافته إلى السلة!');
     }
 
-  
-
+    function login(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      localStorage.setItem('user', JSON.stringify({ email, password }));
+      alert('تم تسجيل الدخول بنجاح!');
+    }
   </script>
-<div class="mt-10 w-full max-w-2xl">
-  <h2 class="text-xl font-bold mb-2 text-white">💬 تواصل معنا</h2>
-  
-</div>
-<!-- ✅ نموذج التواصل -->
-<form id="contactForm" class="flex flex-col space-y-2">
-  <input type="text" name="name" placeholder="اسمك" required class="px-4 py-2 rounded text-black">
-
-  <textarea name="message" placeholder="رسالتك..." required class="px-4 py-2 rounded text-black"></textarea>
-  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">📨 إرسال</button>
-</form>
-
-
-
- <script>
-  const form = document.getElementById("contactForm");
-
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // يمنع الإرسال العادي
-
-    form.reset(); // يمسح الحقول
-
-    alert("✅ تم إرسال الرسالة بنجاح!"); // يظهر التنبيه
-  });
-</script>
-
-
-
-
-
 </body>
 </html>
