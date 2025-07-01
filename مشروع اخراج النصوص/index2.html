@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>كاراس فتحي | متجر الشباشب</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      background-color: #f2f2f2;
+      color: #222;
+    }
+    header {
+      background-color: #131921;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8em;
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6));
+      height: 60vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2.5em;
+      font-weight: bold;
+      text-align: center;
+    }
+    .section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #131921;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+    .product {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+    }
+    .product img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .product button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    footer {
+      background-color: #131921;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 60px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: auto;
+    }
+    input[type=email], input[type=password], input[type=text] {
+      padding: 12px;
+      font-size: 1em;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .login-btn {
+      background-color: #ff9900;
+      color: white;
+      padding: 12px;
+      cursor: pointer;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>كاراس فتحي</h1>
+    <nav>
+      <a href="#products">المنتجات</a>
+      <a href="#about">من نحن</a>
+      <a href="#contact">تواصل معنا</a>
+      <a href="#login">تسجيل الدخول</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    مرحبًا بك في متجر الشباشب الفاخرة
+  </div>
+
+  <section class="section" id="products">
+    <h2>منتجاتنا</h2>
+    <div class="products">
+      <div class="product">
+        <p><img src="1.jpg" : شبشب جلد فاخر </p>
+        <h3>شبشب جلد فاخر</h3>
+        <p>السعر: 150 جنيه</p>
+        <button onclick="addToCart('شبشب جلد فاخر')">أضف إلى السلة</button>
+      </div>
+      <div class="product">
+        <p><img src="2.jpg" شبشب مطاطي مريح</p>
+        <h3>شبشب مطاطي مريح</h3>
+        <p>السعر: 90 جنيه</p>
+        <button onclick="addToCart('شبشب مطاطي مريح')">أضف إلى السلة</button>
+      </div>
+      <div class="product">
+        <p><img src="3.jpg" شبشب صيفي خفيف</p>
+        <h3>شبشب صيفي خفيف</h3>
+        <p>السعر: 120 جنيه</p>
+        <button onclick="addToCart('شبشب صيفي خفيف')">أضف إلى السلة</button>
+      </div>
+      <div class="product">
+        <p><img src="4.jpg" >: شبشب منزلي مبطن</p>
+        <h3>شبشب منزلي مبطن</h3>
+        <p>السعر: 110 جنيه</p>
+        <button onclick="addToCart('شبشب منزلي مبطن')">أضف إلى السلة</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <h2>من نحن</h2>
+    <p> نحن متجر متخصص في بيع الشباشب الفاخرة بجودة عالية وخامات ممتازة وتصميمات عصرية تناسب جميع الأذواق و التواصل عن طريق رقم لهاتف متاح توصيل لاى مكان  فى طنطا للتواصل معنا اتصل على 01222373426 او 01555863369
+
+  <section class="section" id="contact">
+    <h2>تواصل معنا</h2>
+    <p>📞 رقم الهاتف: 01222373426</p>
+    <p>📧 البريد الإلكتروني: farhykaras554422@gmail.com</p>
+    <p><a href="https://wa.me/201222373426" target="_blank">راسلنا على واتساب</a></p>
+  </section>
+
+  <section class="section" id="login">
+    <h2>تسجيل الدخول</h2>
+    <form onsubmit="login(event)">
+      <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+      <input type="password" id="password" placeholder="كلمة المرور" required>
+      <button class="login-btn" type="submit">تسجيل الدخول</button>
+    </form>
+  </section>
+
+  <footer>
+    &copy; 2025 جميع الحقوق محفوظة لمتجر كاراس فتحي.
+  </footer>
+
+  <script>
+    function addToCart(product) {
+      alert(product + ' تمت إضافته إلى السلة!');
+    }
+
+    function login(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+      localStorage.setItem('user', JSON.stringify({ email, password }));
+      alert('تم تسجيل الدخول بنجاح!');
+    }
+  </script>
+</body>
+</html>

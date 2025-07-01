@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta name="description" content="موقع لتحميل الفيديوهات من يوتيوب وتيك توك بدون علامة مائية.">
+<meta name="keywords" content="تحميل فيديو, يوتيوب, تيك توك, فيسبوك, إنستغرام, بدون لوجو">
+<meta name="robots" content="index, follow">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تحميل الفيديوهات من كل المنصات</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+    :root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-color: #ffffff;
+}
+
+    body {
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1, #fbc2eb, #a6c1ee, #84fab0, #8fd3f4, #a1c4fd, #c2e9fb, #d4fc79, #96e6a1);
+      background-size: 5000% 5000%;
+      animation: rainbow 40s ease infinite;
+    }
+
+    @keyframes rainbow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+  </style>
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    const theme = body.getAttribute("data-theme") === "light" ? "dark" : "light";
+    body.setAttribute("data-theme", theme);
+  }
+</script>
+
+  
+</head>
+<body data-theme="light" class="min-h-screen flex flex-col items-center justify-center text-white text-center p-4">
+<div class="absolute top-4 right-4">
+  <button onclick="toggleTheme()" class="bg-black text-white px-4 py-2 rounded-full shadow">
+    🌗 وضع ليلي/نهاري
+  </button>
+</div>
+
+
+  <h1 class="text-4xl font-bold mb-6 drop-shadow-lg">📥 تحميل أي فيديو من أي منصة</h1>
+  <p class="mb-6 text-lg max-w-xl">ضع رابط الفيديو من يوتيوب، تيك توك، فيسبوك، إنستغرام أو تيليجرام وسنوجهك لأفضل طريقة تحميل بدون لوجو.</p>
+
+  <input type="text" id="url" placeholder="أدخل رابط الفيديو هنا..."
+    class="w-full max-w-xl px-4 py-3 rounded-xl text-black text-lg shadow-lg outline-none mb-4">
+
+  <button onclick="redirect()"
+    class="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-6 py-3 rounded-full shadow-xl transition duration-300">
+    🚀 ابدأ التحميل
+  </button>
+<div class="mt-10 w-full max-w-3xl text-white text-center">
+  <h2 class="text-2xl font-bold mb-4">🎵 مكتبة نغمات مجانية</h2>
+  <ul class="space-y-2">
+    <li><a href="sounds/ringtone1.mp3" download class="underline hover:text-yellow-300">🔊 نغمة 1</a></li>
+    <li><a href="sounds/ringtone2.mp3" download class="underline hover:text-yellow-300">🔊 نغمة 2</a></li>
+    <li><a href="sounds/ringtone3.mp3" download class="underline hover:text-yellow-300">🔊 نغمة 3</a></li>
+  </ul>
+</div>
+<div class="mt-10 w-full max-w-3xl text-white text-center">
+  <h2 class="text-2xl font-bold mb-4">📚 مقالات مفيدة</h2>
+  <ul class="space-y-2">
+    <li><a href="#" class="underline hover:text-yellow-300">💡 كيف تحمل من تيك توك بدون علامة مائية؟</a></li>
+    <li><a href="#" class="underline hover:text-yellow-300">🎬 أفضل تطبيقات مونتاج فيديو للموبايل</a></li>
+    <li><a href="#" class="underline hover:text-yellow-300">🧠 كيف تبدأ قناة يوتيوب ناجحة؟</a></li>
+  </ul>
+</div>
+
+  
+  <script>
+    function redirect() {
+      const url = document.getElementById("url").value.trim();
+      if (!url) return alert("من فضلك أدخل رابط الفيديو.");
+
+      if (url.includes("youtube.com") || url.includes("youtu.be")) {
+        const id = extractYouTubeID(url);
+        window.open("https://ssyoutube.com/watch?v=" + id, "_blank");
+      } else if (url.includes("tiktok.com")) {
+        window.open("https://snaptik.app/", "_blank");
+      } else if (url.includes("instagram.com")) {
+        window.open("https://igram.io", "_blank");
+      } else if (url.includes("facebook.com")) {
+        window.open("https://fdown.net", "_blank");
+      } else if (url.includes("t.me")) {
+        alert("افتح الرابط مباشرة في تيليجرام واضغط على الفيديو لتنزيله.");
+      } else {
+        alert("عذرًا، المنصة غير مدعومة حاليًا. جرب رابط آخر.");
+      }
+    }
+
+  
+
+  </script>
+<div class="mt-10 w-full max-w-2xl">
+  <h2 class="text-xl font-bold mb-2 text-white">💬 تواصل معنا</h2>
+  
+</div>
+<!-- ✅ نموذج التواصل -->
+<form id="contactForm" class="flex flex-col space-y-2">
+  <input type="text" name="name" placeholder="اسمك" required class="px-4 py-2 rounded text-black">
+
+  <textarea name="message" placeholder="رسالتك..." required class="px-4 py-2 rounded text-black"></textarea>
+  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">📨 إرسال</button>
+</form>
+
+
+
+ <script>
+  const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // يمنع الإرسال العادي
+
+    form.reset(); // يمسح الحقول
+
+    alert("✅ تم إرسال الرسالة بنجاح!"); // يظهر التنبيه
+  });
+</script>
+
+
+
+
+
+</body>
+</html>
